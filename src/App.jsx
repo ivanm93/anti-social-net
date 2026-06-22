@@ -6,7 +6,6 @@ import HomePage from './pages/HomePage'
 import ProfilePage from './pages/ProfilePage'
 import PostDetailPage from './pages/PostDetailPage'
 import ExplorePage from './pages/ExplorePage'
-import VerifyEmailPage from './pages/VerifyEmailPage'
 
 function PrivateRoute({ children }) {
   const { user } = useAuth()
@@ -20,7 +19,6 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/verify/:token" element={<VerifyEmailPage />} />
           <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>} />
           <Route path="/profile/:nickName" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
           <Route path="/post/:id" element={<PrivateRoute><PostDetailPage /></PrivateRoute>} />
