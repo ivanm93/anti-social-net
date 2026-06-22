@@ -1,0 +1,23 @@
+:root {
+  --purple-dark: #26215C;
+  --purple-mid: #3C3489;
+  --purple-light: #EEEDFE;
+  --purple-border: #CECBF6;
+}
+
+body {
+  background-color: #f4f3fc;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-purple {
+  background-color: var(--purple-mid);
+  color: white;
+  border: none;
+}
+.btn-purple:hover {
+  background-color: var(--purple-dark);
+  color: white;
+}
+
+a { text-decoration: none; }
