@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { getInitials } from '../../utils/userHelpers'
 
@@ -8,15 +8,11 @@ const navItems = [
 ]
 
 export default function Sidebar() {
-  const { user, logout } = useAuth()
-  const navigate = useNavigate()
+  const { user } = useAuth()
 
 const initials = getInitials(user)
 
-  const handleLogout = () => {
-    logout()
-    navigate('/login')
-  }
+
 
   return (
     <div className="d-flex flex-column gap-3" style={{ position: 'sticky', top: 76 }}>
@@ -86,6 +82,7 @@ const initials = getInitials(user)
           </NavLink>
         </nav>
       </div>
+    
     </div>
   )
 }
