@@ -1,11 +1,8 @@
 import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext'
+import { Link } from 'react-router-dom'
 import { registerUser } from '../api/usersApi'
 
 export default function RegisterPage() {
-  const { login } = useAuth()
-  const navigate = useNavigate()
   const [form, setForm] = useState({ name: '', nickName: '', email: '', password: '' })
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState(false)
@@ -58,11 +55,7 @@ export default function RegisterPage() {
            style={{ background: '#f4f3fc' }}>
         <div className="card border-0 shadow-sm p-4 text-center" style={{ width: '100%', maxWidth: 400, borderRadius: 16 }}>
           <i className="ti ti-mail" style={{ fontSize: 48, color: '#3C3489' }}></i>
-          <h5 className="mt-3" style={{ color: '#26215C' }}>Revisá tu correo</h5>
-          <p className="text-muted small">
-            Te enviamos un link de confirmación a <strong>{form.email}</strong>.
-            Hacé click en el link para activar tu cuenta.
-          </p>
+          <h5 className="mt-3" style={{ color: '#26215C' }}>Usuario Creado correctamente</h5>
         </div>
       </div>
     )
